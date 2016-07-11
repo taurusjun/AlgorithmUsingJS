@@ -1,7 +1,7 @@
 /**
  * Created by I306067 on 7/9/2016.
  */
-var Stack=require('./Stack.js').Stack;
+var Stack=require('./../lib/Stack.js').Stack;
 /******************  Number base convertor      *******************/
 var convert = function (number, base) {
     var s = new Stack();

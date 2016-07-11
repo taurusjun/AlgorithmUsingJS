@@ -1,7 +1,7 @@
 /**
  * Created by I306067 on 7/11/2016.
  */
-var Stack=require('./Stack.js').Stack;
+var Stack=require('./../lib/Stack.js').Stack;
 
 var isEchoString=function (str) {
     
