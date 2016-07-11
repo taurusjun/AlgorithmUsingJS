@@ -3,7 +3,7 @@
  */
 var Stack=require('./Stack.js').Stack;
 /******************  Number base convertor      *******************/
-var convertor = function (number, base) {
+var convert = function (number, base) {
     var s = new Stack();
 
     while (number!==0) {
@@ -21,4 +21,4 @@ var convertor = function (number, base) {
     return returnVal;
 }
 
-console.log(convertor(4,2));
+console.log(convertor(433,2));
