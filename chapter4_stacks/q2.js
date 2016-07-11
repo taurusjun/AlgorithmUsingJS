@@ -12,18 +12,32 @@ var exprEval = function (expression) {
     var operatorDivision = '/';
 
     var operandStack = new Stack();
-    var tempStack = new Stack();
     var operatorStack = new Stack();
 
+    var temp="";
     for(var idx=0; idx<expression.length; idx++){
         var ch = expression[idx];
         if(ch===operatorAdd || ch===operatorMinus || ch===operatorMultipy || ch===operatorDivision ){
             operatorStack.push(ch);
-            while (tempStack.length()){
-                operandStack.push(tempStack.pop());
-            }
+            operandStack.push(temp);
+            temp="";
         }else {
-            tempStack.push(ch);
+            temp+=ch;
         }
     }
+
+    operandStack.push(temp);
+
+    var out=""
+    while (operatorStack.length()>0){
+        out+=operandStack.pop();
+        out+=" "
+        out+=operandStack.pop();
+        out+=operatorStack.pop();
+        out+="|"
+    }
+
+    return out;
 }
+
+console.log(exprEval('34+56'));
